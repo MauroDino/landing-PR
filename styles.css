@@ -396,27 +396,26 @@ footer {
   align-items: center;
 }
 
-@media (max-width: 600px) {
-  .features {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
 @media (max-width: 768px) {
   .header {
     padding: 30px 15px; /* Reduce padding en pantallas pequeñas */
   }
 
   .hero-grid {
-    grid-template-columns: 1fr; /* Convierte la grilla en una sola columna */
-    text-align: center;
+    display: flex; /* Cambia grid por flex para mejor adaptación */
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Añade espacio entre elementos */
   }
 
   .columna_tres, .columna_uno {
+    display: flex;
+    flex-direction: column;
     justify-content: center; /* Centra el contenido */
     align-items: center;
     text-align: center;
+    max-width: 90%; /* Evita que ocupen todo el ancho */
+    margin: 0 auto; /* Centra en la pantalla */
   }
 
   .texto_col_tres, .texto_col_uno {
@@ -428,8 +427,20 @@ footer {
   }
 
   .botones {
+    display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
+    width: 100%;
+  }
+
+  .botones a {
+    width: 80%; /* Evita botones demasiado pequeños en mobile */
+    max-width: 300px;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
   }
 }

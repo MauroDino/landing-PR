@@ -402,3 +402,34 @@ footer {
     align-items: center;
   }
 }
+
+@media (max-width: 768px) {
+  .header {
+    padding: 30px 15px; /* Reduce padding en pantallas pequeñas */
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr; /* Convierte la grilla en una sola columna */
+    text-align: center;
+  }
+
+  .columna_tres, .columna_uno {
+    justify-content: center; /* Centra el contenido */
+    align-items: center;
+    text-align: center;
+  }
+
+  .texto_col_tres, .texto_col_uno {
+    text-align: center;
+  }
+
+  .texto_col_tres p, .texto_col_uno p {
+    white-space: normal; /* Permite que el texto se acomode en varias líneas */
+  }
+
+  .botones {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+}

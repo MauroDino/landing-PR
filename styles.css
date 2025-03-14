@@ -238,16 +238,6 @@ hr {
   align-items: center;
 }
 
-.radio-btn:hover {
-  box-shadow: 0 0 8px grey;
-  cursor: pointer;
-  transform: scale(1.1);
-}
-
-.radio-btn:checked {
-  box-shadow: 0 0 8px rgba(255, 102, 0, 0.9);
-}
-
 .text-cant {
   margin-top: 10px;
 }

@@ -5,11 +5,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>Pan Real</title>
-    <link rel="icon" href="Imágenes/Favicon.png" width="18" height="18">
+    <link rel="icon" href="../Imágenes/Favicon.png">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap">
   
 </head>
 <body>
+
+  <!-- Aquí se cargará el header dinámico -->
+  <header id="header-din">
+
+    <div class="titulo">
+      <h1>👑 Pan Real 👑</h1>
+      <p class="subtitulo">El mejor pan para tu mesa</p>
+      <img src="Imágenes/Favicon.png" width="256" height="256" alt="Logo Pan Real">
+  </div>
+
+    <p>✅ Con al menos 24 hs de fermentación</p>
+    <p>✅ Buen aroma y sabor </p>
+    <p>✅ Ideal para el desayuno </p>
+    <p>✅ Sin aditivos</p>
+    <p>✅ Sin derivados de animales </p>
+
+    <div class="botones">
+      <div class="cta-container">
+        <a href="#origen-PR" class="button-origen">Origen de Pan Real</a>
+      </div>
+      <div class="cta-container">
+        <a href="#Compras-form" class="button-quiero">¡Quiero mi pan!</a>
+      </div>
+      <div class="cta-container">
+        <a href="#comentarios" class="button-comment">Experiencias</a>
+      </div>
+    </div>
+        
+  </header> 
 
   <header class="header">
     <div class="hero-grid">
@@ -48,57 +77,72 @@
         <a href="#Compras-form" class="button-quiero">¡Quiero mi pan!</a>
       </div>
       <div class="cta-container">
-        <a href="#comentarios" class="button-comment">Comentarios</a>
+        <a href="#comentarios" class="button-comment">Experiencias</a>
       </div>
-  </div>
+    </div>
 
 </header>
 
 <!-- SEGUNDA PARTE-->
 <hr>
 <div class="cuerpo">
-    <section class="features">
-    <div class="Harina_000_al_cien">
-      <h2>100% 000</h2>
-      <img src="Imágenes/Pan_blanco.png" alt="Foto de pan 100% blanco" width="300px" height="300px">
-      <p id="ingredientes">Ingredientes:</p>
+    <section class="panes">
+      <div class="Harina_000_al_cien">
+        <h2>100% 000</h2>
+        <img src="../Imágenes/Pan_blanco.png" alt="Foto de pan 100% blanco" width="300px" height="300px">
+        <div class="ingredientes">
+          <p id="ingredientes">Ingredientes:</p>
 
-      <ul id="Lista_100%_000">
-        <li>Harina 000</li>
-        <li>Agua</li>
-        <li>Sal</li>
-        <li>Azucar</li>
-        <li>Levadura</li>
-      </ul>
+          <ul id="Lista_100%_000">
+            <li>Harina 000</li>
+            <li>Agua</li>
+            <li>Sal</li>
+            <li>Azucar</li>
+            <li>Levadura</li>
+            <br> <br>
+            <div class="precio">$2.500</div>
+          </ul>
+        </div>
+      </div>
 
-    </div>
-    <div class="feature">
-      <h2>Tradicional</h2>
-      <img src="Imágenes/Pan_blanco.png" alt="Foto de pan 100% blanco" width="300px" height="300px">
-      <p id="ingredientes">Ingredientes</p>
-      <ul id="Lista_tradicional">
-        
-        <li>Harina integral</li>
-        <li>Agua</li>
-        <li>Harina 000</li>
-        <li>Sal</li>
-        <li>Azucar</li>
-        <li>Levadura</li>
-      </ul>
-    </div>
-    <div class="feature">
-      <h2>Blend de harinas</h2>
-      <img src="Imágenes/Pan_blend.png" alt="Foto de pan blend" width="300px" height="300px">
-      <p id="ingredientes">Ingredientes</p>
-      <ul id="Lista_blend">
-        <li>Harina 000</li>
-        <li>Agua</li>
-        <li>Harina integral</li>
-        <li>Sal</li>
-        <li>Azucar</li>
-        <li>Levadura</li>
-      </ul>
-    </div>
+      <div class="tradicional">
+        <h2>Tradicional</h2>
+        <img src="../Imágenes/Rodaja_pan_tradi.png" alt="Foto de pan 100% blanco" width="300px" height="300px">
+        <div class="ingredientes">
+          <p id="ingredientes">Ingredientes</p>
+          <ul id="Lista_tradicional">
+
+            <li>Harina 000</li>
+            <li>Agua</li>
+            <li>Harina integral</li>
+            <li>Sal</li>
+            <li>Azucar</li>
+            <li>Levadura</li>
+            <br>
+            <div class="precio">$2.500</div>
+          </ul>
+        </div>
+      </div>
+
+      <div class="blend">
+        <h2>Blend de harinas</h2>
+        <img src="../Imágenes/Pan_blend.png" alt="Foto de pan blend" width="300px" height="300px">
+        <div class="ingredientes">
+          <p id="ingredientes">Ingredientes</p>
+          <ul id="Lista_blend">
+            <li>Harina integral</li>
+            <li>Agua</li>
+            <li>Harina 000</li>
+            <li>Sal</li>
+            <li>Azucar</li>
+            <li>Levadura</li>
+            <br>
+            <div class="precio">$3.000</div>
+            
+          </ul>
+        </div>
+
+      </div>
   </section>
   <br>
 </div>
@@ -136,7 +180,7 @@
       
       <div class="btn-encargar">
       <input type="submit" class="boton-encargar" value="Encargar">
-    </div>
+      </div>
     </form>
     
   </section>

@@ -1,6 +1,8 @@
 :root {
   --color-primario: #855C52;
   --color-secundario: #FAF3E0;
+  --color-secundario2: #faf3e1;
+
   --color-alternativo: #7B3F00;
   --color-alternativo2: #4A2500;
   --color-texto-btn: #FAF3E0;
@@ -10,12 +12,24 @@
   --color-fondo: #f1f1f1;
   --color-fondo2: #A8D1B6; 
   --color-fondo3: #A8D5BA;
+  --color-fondo4: #eef2f3;
+  --color-fondo5: #AFA895 ;
+  --color-fondo6: #7D7663 ;
+  --color-fondo7: #AFA895 ;
+  --color-fondo8: #C8C1AE ;
+  --color-fondo9: #968F7C;
+  --color-fondo10: rgba(244, 216, 198, 0.36);    ;
+
+  --color-texto-ing: #4A443A;
+  --color-texto-ing2: #7A7466 ;
+  --color-texto-ing3: #2E2B26;
+
   --color-fondo-comment1: #F0E5DE ;
 
 }
 /* 
-verde: A8D5BA; marrón: B7B38C; verdecito: C8E4D0; verde oscurito: 66A68D; verde pastelito: A3D9D0 
-gris plateado suave: eef2f3; blanco suave: fafafa; gris claro con toque cálido: f1f1f1; F0E5DE 
+verde: A8D5BA; marrón: B7B38C; verde oscurito: 66A68D; 
+
 */
 
 * {
@@ -31,12 +45,18 @@ body {
   background-color: #f8f8f8;
 }
 
+#header-din {
+  background-color: var(--color-secundario);
+  color: var(--color-texto);
+  text-align: center;
+  padding: 15px 20px;
+}
+
 .header {
   background-color: var(--color-secundario);
   color: var(--color-texto);
   padding: 50px 20px;
   display: flex;
-  
   flex-direction: column;
   align-items: center;
 }
@@ -44,7 +64,6 @@ body {
 .hero-grid {
   display: grid;
   grid-template-columns: 1fr 2fr 1fr; /* 3 columnas */
-
   max-width: 1000px;
   width: 100%;
   margin-bottom: 30px;
@@ -165,7 +184,7 @@ body {
   margin: 10px 0;
 }
 
-.features {
+.panes {
   display: flex;
   justify-content: center;
   gap: 20px;
@@ -179,8 +198,9 @@ body {
 }
 
 .Harina_000_al_cien,
-.feature {
-  background: white;
+.tradicional,
+.blend {
+  background: var(--color-secundario);
   padding: 20px;
   border-radius: 10px;
   width: 300px;
@@ -189,6 +209,7 @@ body {
 
 #ingredientes {
   padding: 10px;
+  text-decoration-line: underline;
 }
 
 ul {
@@ -217,6 +238,17 @@ hr {
   border-bottom: 2px solid black;*/
 }
 
+.ingredientes {
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  width: auto;
+  height: 40%;
+  background-color: var(--color-fondo10);
+  color: var(--color-texto-in);
+  border-radius: 10px;
+}
+
+
+
 /* FORMULARIO */
 .todo-formulario {
   background-color: #FFFFFF00;
@@ -228,7 +260,7 @@ hr {
   width: 80%; /* Ajusta el tamaño del formulario (puedes cambiar el porcentaje si quieres hacerlo más pequeño o grande) */
   max-width: 600px; /* Establece un límite de ancho máximo */
   height: auto; /* Asegura que la altura se ajuste al contenido */
-  background-color: var(--color-fondo3);
+  background-color: var(--color-fondo10);
   border-radius: 10px;
   border: 1px solid rgba(0, 0, 0, 0.1); /* Borde sutil */
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
@@ -247,10 +279,9 @@ hr {
 }
 
 .checkbox-cant {
-  
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columnas */
-    gap: 1px; /* Espacio entre los checkboxes */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+  gap: 1px; /* Espacio entre los checkboxes */
 }
 
 .btn-encargar {
@@ -263,7 +294,7 @@ hr {
   width: auto;
 }
 .input-campo {
-  background-color: var(--color-texto-btn);
+  background-color: var(--color-fondo9);
   color: var(--color-alternativo);
   font-size: 16px;
   border: none;
@@ -278,9 +309,10 @@ hr {
   }
 
 ::placeholder {
-  color: var(--color-texto-btn)
+  color: var(--color-texto-btn);
+  text-align: center;
   opacity: 1;
-}
+  }
 
 .boton-encargar {
   width: 20%;
@@ -433,4 +465,26 @@ footer {
     max-width: 100%;
     height: auto;
   }
+}
+
+@media (min-width: 769px) {
+  #header-din { display: none; } /* Ocultar header dinámico en desktop */
+}
+
+@media (max-width: 768px) {
+  header:not(#header-din) { display: none; } /* Ocultar header fijo en mobile */
+}
+
+@media (max-width: 768px) { 
+  #header-din .button-comment {
+    width: 100%; /* Que ocupe todo el ancho disponible */
+    font-size: 14px; /* Texto más pequeño */
+    padding: 10px; /* Ajusta el espacio interno */
+  }
+
+.btn-encargar {
+  width: 100%; /* Que ocupe todo el ancho disponible */
+  font-size: 14px; /* Texto más pequeño */
+  padding: 10px; /* Ajusta el espacio interno */
+}
 }

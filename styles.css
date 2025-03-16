@@ -1,502 +1,291 @@
-:root {
-  --color-primario: #855C52;
-  --color-secundario: #FAF3E0;
-  --color-secundario2: #faf3e1;
-
-  --color-alternativo: #7B3F00;
-  --color-alternativo2: #4A2500;
-  --color-texto-btn: #FAF3E0;
-  --color-text-btn2: #B39A71 ;
-
-  --color-texto: black;
-  --color-fondo: #f1f1f1;
-  --color-fondo2: #A8D1B6; 
-  --color-fondo3: #A8D5BA;
-  --color-fondo4: #eef2f3;
-  --color-fondo5: #AFA895 ;
-  --color-fondo6: #7D7663 ;
-  --color-fondo7: #AFA895 ;
-  --color-fondo8: #C8C1AE ;
-  --color-fondo9: #968F7C;
-  --color-fondo10: rgba(244, 216, 198, 0.36);    ;
-
-  --color-texto-ing: #4A443A;
-  --color-texto-ing2: #7A7466 ;
-  --color-texto-ing3: #2E2B26;
-
-  --color-fondo-comment1: #F0E5DE ;
-
-}
-/* 
-verde: A8D5BA; marrón: B7B38C; verde oscurito: 66A68D; 
-
-*/
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Playfair Display;
-  box-sizing: border-box;
-}
-
-body {
-  text-align: center;
-  background-color: #f8f8f8;
-}
-
-#header-din {
-  background-color: var(--color-secundario);
-  color: var(--color-texto);
-  text-align: center;
-  padding: 15px 20px;
-}
-
-.header {
-  background-color: var(--color-secundario);
-  color: var(--color-texto);
-  padding: 50px 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr; /* 3 columnas */
-  max-width: 1000px;
-  width: 100%;
-  margin-bottom: 30px;
-}
-
-.columna_tres {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end; /* Alinea el contenido al final de la columna */
-  height: 100%; /* Asegura que ocupe todo el alto disponible */
-}
-
-.columna_uno {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end; /* Alinea el contenido al final de la columna */
-  height: 100%; /* Asegura que ocupe todo el alto disponible */
-}
-
-.texto_col_tres {
-  display: flex;
-  flex-direction: column; /* Asegura que los elementos estén uno debajo del otro */
-  text-align: left; /* Alinea el texto de los párrafos a la izquierda */
-  margin-bottom: 0; /* Opcional: Evita margen extra al final */
-}
-
-.texto_col_uno {
-  display: flex;
-  flex-direction: column; /* Asegura que los elementos estén uno debajo del otro */
-  text-align: right; /* Alinea el texto de los párrafos a la derecha */
-  margin-bottom: 0; /* Opcional: Evita margen extra al final */
-}
-
-.texto_col_tres p {
-  display: inline-block; /* Hace que cada p esté en una sola línea */
-  margin: 5px 0;  /* Espacio entre los párrafos */
-  white-space: nowrap; /* Evita que el texto se rompa */
-  font-size: 18px;
-}
-
-.texto_col_uno p {
-  display: inline-block; /* Hace que cada p esté en una sola línea */
-  margin: 5px 0;  /* Espacio entre los párrafos */
-  white-space: nowrap; /* Evita que el texto se rompa */
-  font-size: 18px;
-}
-
-
-.titulo {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-
-/* Botón Origen */
-.button-origen {
-  padding: 10px 20px;
-  background-color: var(--color-alternativo);
-  color: var(--color-texto-btn);
-  text-decoration: none;
-  font-size: 1.2rem;
-  border-radius: 5px;
-  display: inline-block; /* Para que la transformación funcione correctamente */
-  transition: all 0.3s ease; /* Transición suave */
-}
-
-/* Botón Quiero */
-.button-quiero {
-  padding: 10px 20px;
-  background-color: var(--color-alternativo);
-  color: var(--color-texto-btn);
-  text-decoration: none;
-  font-size: 1.2rem;
-  border-radius: 5px;
-  display: inline-block;
-  transition: all 0.3s ease; /* Transición suave */
-}
-
-/* Botón Comentarios */
-.button-comment {
-  padding: 10px 20px;
-  background-color: var(--color-alternativo);
-  color: var(--color-texto-btn);
-  text-decoration: none;
-  font-size: 1.2rem;
-  border-radius: 5px;
-  display: inline-block;
-  transition: all 0.3s ease; /* Transición suave */
-}
-
-/* TRANSICIONES EN EL HOVER */
-.button-quiero:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra difusa */
-  transform: scale(1.05); /* Aumenta ligeramente el tamaño */
-  background-color: var(--color-alternativo2);
-}
-
-.button-comment:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra difusa */
-  transform: scale(1.05); /* Aumenta ligeramente el tamaño */
-  background-color: var(--color-alternativo2);
-}
-
-.button-origen:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra difusa */
-  transform: scale(1.05); /* Aumenta ligeramente el tamaño */
-  background-color: var(--color-alternativo2);
-}
-
-.hero h1 {
-  font-size: 2.5rem;
-}
-
-.hero p {
-  font-size: 1.2rem;
-  margin: 10px 0;
-}
-
-.panes {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  padding: 40px 20px;
-  flex-wrap: wrap;
-}
-
-.botones {
-  display: flex;
-  gap: 20px;
-}
-
-.Harina_000_al_cien,
-.tradicional,
-.blend {
-  background: var(--color-secundario);
-  padding: 20px;
-  border-radius: 10px;
-  width: 300px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-#ingredientes {
-  padding: 10px;
-  text-decoration-line: underline;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-li {
-  padding: 1px;
-}
-
-.cta-container {
-  text-align: center;
-  margin-top: 20px;
-}
-
-hr {
-  width: 100%;
-  height: 1px;
-}
-
-.cuerpo {
-  background-color: linear-gradient(var(--color-fondo) #FFFFFF00);
-  /*border-top: 2px solid black;
-  border-bottom: 2px solid black;*/
-}
-
-.ingredientes {
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-  width: auto;
-  height: 40%;
-  background-color: var(--color-fondo10);
-  color: var(--color-texto-in);
-  border-radius: 10px;
-}
-
-
-
-/* FORMULARIO */
-.todo-formulario {
-  background-color: #FFFFFF00;
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Pan Real</title>
+    <link rel="icon" href="Imágenes/Favicon.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap">
   
-}
+</head>
+<body>
 
-.formulario {
-  padding: 20px;
-  width: 80%; /* Ajusta el tamaño del formulario (puedes cambiar el porcentaje si quieres hacerlo más pequeño o grande) */
-  max-width: 600px; /* Establece un límite de ancho máximo */
-  height: auto; /* Asegura que la altura se ajuste al contenido */
-  background-color: var(--color-fondo10);
-  border-radius: 10px;
-  border: 1px solid rgba(0, 0, 0, 0.1); /* Borde sutil */
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-  transition: box-shadow 0.3s ease, transform 0.3s ease; /* Transición suave para sombra y transformación */
-  margin: 20px auto; /* Centra el formulario */
-  flex-direction: column;
-  align-items: center;
-}
+  <!-- Aquí se cargará el header dinámico -->
+  <header id="header-din">
 
-.text-cant {
-  margin-top: 10px;
-}
+    <div class="titulo">
+      <h1>👑 Pan Real 👑</h1>
+      <p class="subtitulo">El mejor pan para tu mesa</p>
+      <img src="Imágenes/Favicon.png" width="256" height="256" alt="Logo Pan Real">
+  </div>
 
-.text-pan {
-  margin-bottom: 8px; /* Separa el texto de los checkboxes */
-}
+    <p>✅ Con al menos 24 hs de fermentación</p>
+    <p>✅ Buen aroma y sabor </p>
+    <p>✅ Ideal para el desayuno </p>
+    <p>✅ Sin aditivos</p>
+    <p>✅ Sin derivados de animales </p>
 
-.checkbox-cant {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columnas */
-  gap: 1px; /* Espacio entre los checkboxes */
-}
+    <div class="botones">
+      <div class="cta-container">
+        <a href="#origen-PR" class="button-origen">Origen de Pan Real</a>
+      </div>
+      <div class="cta-container">
+        <a href="#Compras-form" class="button-quiero">¡Quiero mi pan!</a>
+      </div>
+      <div class="cta-container">
+        <a href="#comentarios" class="button-comment">Experiencias</a>
+      </div>
+    </div>
+        
+  </header> 
 
-.input-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Centra los elementos horizontalmente */
-  margin-bottom: 15px; /* Espaciado entre cada grupo label-input */
-}
+  <header class="header">
+    <div class="hero-grid">
+        <!-- Columna 2 -->
+        <div class="columna_uno">
+          <div class="texto_col_uno">
+            <p>Buen aroma y sabor ✅</p>
+            <p>Ideal para el desayuno ✅</p>
+            <p>Rico en nutrientes esenciales ✅</p>
+            <p>El mejor compañero en un sandwich ✅</p>   
+          </div>       
+        </div> 
+        <!-- Columna 2 -->
+        <div class="titulo">
+            <h1>👑 Pan Real 👑</h1>
+            <p class="subtitulo">El mejor pan para tu mesa</p>
+            <img src="Imágenes/Favicon.png" width="256" height="256" alt="Logo Pan Real">
+        </div>
+        <!-- Columna 3 -->  
+        <div class="columna_tres">
+          <div class="texto_col_tres">
+            <p>✅ Sin aditivos</p>
+            <p>✅ Sin conservantes</p>
+            <p>✅ Sin derivados de animales </p>
+            <p>✅ Con al menos 24 hs de fermentación</p>
+          </div>
+      </div>
+    </div>
 
-.input-container label {
-  font-size: 18px;
-  text-align: center; /* Centra el texto del label */
-}
+    <!-- Botón afuera del grid, centrado debajo de todo -->
+    <div class="botones">
+      <div class="cta-container">
+        <a href="#origen-PR" class="button-origen">Origen de Pan Real</a>
+      </div>
+      <div class="cta-container">
+        <a href="#Compras-form" class="button-quiero">¡Quiero mi pan!</a>
+      </div>
+      <div class="cta-container">
+        <a href="#comentarios" class="button-comment">Experiencias</a>
+      </div>
+    </div>
 
-.input-campo {
-  background-color: var(--color-fondo9);
-  color: white;
-  font-size: 16px;
-  border: none;
-  border-radius: 5px;
-  margin: 10px auto;
-  display: flex;
-  flex-direction: column; /* Pone el label arriba del input */
-  align-items: center; /* Centra todo en el eje horizontal */
-}
+</header>
 
-.input-campo:hover {
-  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2); /* Aumenta la sombra al pasar el ratón */
-  transform: scale(1.05); /* Aumenta ligeramente el tamaño */
-  background-color: var(--color-text-btn2)
-  }
+<!-- SEGUNDA PARTE-->
+<hr>
+<div class="cuerpo">
+    <section class="panes">
+      <div class="Harina_000_al_cien">
+        <h2>100% 000</h2>
+        <img src="Imágenes/Pan_blanco.png" alt="Foto de pan 100% blanco" width="300px" height="300px">
+        <div class="ingredientes">
+          <p id="ingredientes">Ingredientes:</p>
 
-::placeholder {
-  color: var(--color-texto-btn);
-  text-align: center;
-  opacity: 1;
-}
+          <ul id="Lista_100%_000">
+            <li>Harina 000</li>
+            <li>Agua</li>
+            <li>Sal</li>
+            <li>Azucar</li>
+            <li>Levadura</li>
+            <br>
+            <div class="precio">$2.500</div>
+          </ul>
+        </div>
+      </div>
 
-.boton-encargar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;  /* Se adapta al ancho disponible */
-  max-width: 150px; /* Ajuste opcional para no ser demasiado grande */
-  padding: 10px; /* Espaciado interno en lugar de height fija */
-  background-color: var(--color-texto-btn);
-  color: var(--color-alternativo);
-  font-size: 20px;
-  border: none;
-  border-radius: 5px;
-  margin: 10px auto;
-  border: 1px solid #66A68D;
-  text-align: center;
-  white-space: normal; /* Permite que el texto se ajuste */
-}
+      <div class="tradicional">
+        <h2>Tradicional</h2>
+        <img src="Imágenes/Rodaja_pan_tradi.png" alt="Foto de pan 100% blanco" width="300px" height="300px">
+        <div class="ingredientes">
+          <p id="ingredientes">Ingredientes</p>
+          <ul id="Lista_tradicional">
 
-.boton-encargar:hover {
-  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2); /* Aumenta la sombra al pasar el ratón */
-  transform: scale(1.05); /* Aumenta ligeramente el tamaño */
-  background-color: var(--color-text-btn2)
-}
+            <li>Harina 000</li>
+            <li>Agua</li>
+            <li>Harina integral</li>
+            <li>Sal</li>
+            <li>Azucar</li>
+            <li>Levadura</li>
+          
+            <div class="precio">$2.500</div>
+          </ul>
+        </div>
+      </div>
 
-/* ORIGEN DEL PROYECTO */
+      <div class="blend">
+        <h2>Blend de harinas</h2>
+        <img src="Imágenes/Pan_blend.png" alt="Foto de pan blend" width="300px" height="300px">
+        <div class="ingredientes">
+          <p id="ingredientes">Ingredientes</p>
+          <ul id="Lista_blend">
+            <li>Harina integral</li>
+            <li>Agua</li>
+            <li>Harina 000</li>
+            <li>Sal</li>
+            <li>Azucar</li>
+            <li>Levadura</li>
+            
+            <div class="precio">$3.000</div>
+            
+          </ul>
+        </div>
 
-.origen-pan {
-  background-color: var(--color-fondo);
-}
+      </div>
+  </section>
+  <br>
+</div>
 
-.texto-origen {
-  column-count: 2; /* Número de columnas */
-  column-gap: 30px; /* Espacio entre las columnas */
-  height: auto; /* Ajusta la altura automáticamente */
-  line-height: 1.6; /* Espaciado entre las líneas de texto */
-  max-width: 100%; /* Se adapta al contenedor */
-  padding: 10px; /* Ajusta el espacio interno si lo necesitas */
-  text-align: justify;
-}
+<!-- TERCERA PARTE -->
+<div class="todo-formulario">
+  <section class="Compras-form" id="Compras-form">
+    <form class="formulario" action="https://formspree.io/f/mblglybz" method="post">
+      <h2>¡Quiero el mio!</h2>
+      <p>Llená los campos para encargar tu Pan Real.</p>
+      <br>
+      <div class="input-container">
+        <label for="name">¿Cómo te llamás?</label>
+        <input class="input-campo" type="text" name="nombre" placeholder="Ej: Noa" required>
+      </div>
+      <div class="input-container">
+        <label for="email">Escribí tu mail, así te llega la confirmación del pedido.</label>
+        <input class="input-campo" type="email" placeholder="Ej: noaschaff5@mail.com" required>
+      </div>
+      <div class="input-container">
+        <label for="tel">Escribí tu número de teléfono así coordinamos la entrega</label>
+        <input class="input-campo" type="tel" placeholder="Ej: 221 444 6598" pattern="[0-9+\s-]{7,15}" required>
+      </div>
+      <section id="cantidad">
+        <p class="text-cant">Seleccioná la cantidad:</p>
+      <label>
+        <input type="radio" name="cantidad" value="1" class="radio-btn"> 1
+      </label>
+      <label>
+        <input type="radio" name="cantidad" value="2" class="radio-btn"> 2
+      </label>
+      <label>
+        <input type="radio" name="cantidad" value="3" class="radio-btn"> 3
+      </label>
+      </section>
+      <br>
+      <section id="opciones">
+      <p class="text-pan">Seleccioná los panes:</p>
+      <div id="checkbox-container" class="checkbox-cant">
+        <!-- Los checkboxes aparecerán aquí -->
+      </div>
+    </section>
+      
+      <br>
+      
+      <div>
+      <input type="submit" class="boton-encargar" value="Encargar">
+      </div>
+    </form>
+    
+  </section>
+</div>
 
-.cursiva {
-  font-style: italic;
-}
+<!-- ORIGEN -->
 
-.highlight {
-  font-size: 2rem; /* Tamaño de la letra */
-  font-weight: bold; /* Negrita, opcional */
-  color: black; /* Color de la letra */
-}
+<hr>
+<div class="origen-pan" id="origen-PR">
+    <p class="texto-origen"><span class="negrita"><span class="highlight">P</span>an Real</span> nació en marzo de 2023 gracias a la ayuda de mis amigos. Pero fue en 2017 cuando empecé a producir para consumo propio. Sucedió después de mi primera consulta con una nutricionista que entre otras cosas, me dijo: <span class="cursiva">"Siempre es preferible comer algo cuyos ingredientes hayas visto, y si es hecho por vos, mejor aun"</span>. A partir de ahí empecé a elaborar: experimenté, investigué y probé hasta que en un momento dije: </span>"Es un 10"</span>.
 
-.negrita {
-  font-weight: bolder;
-}
+    La búsqueda estaba en lograr algo lo más sano y nutritivo posible. Siempre pensé que estos panes son más sanos que los que se pueden comprar en un supermercado porque no tienen conservantes ni nada raro, más allá de lo que puedan tener los ingredientes. De ahí el nombre <span class="negrita">Pan Real</span>.  </p>
+</div>
 
-/*CUARTA PARTE: COMENTARIOS */
 
-#comentarios {
-  display: flex;
-  flex-wrap: wrap; /* Para que los comentarios se acomoden a nuevas líneas si no caben en una sola fila */
-  gap: 20px; /* Espacio entre los comentarios */
-}
+<!--CUARTA PARTE: COMENTARIOS -->
+<hr>
+<section id="comentarios">
+  <div class="comments">
+    <div>
+        <span class="stars">★★★★★</span>
+        <span class="comment-fecha">Hace 3 meses</span>
+    </div>
+    <p class="texto-comment">
+      Como todos los días en mi desayuno 2 tostadas del tradicional, y el sabor es impresionante.
+    </p>
+    <p class="text-autor">- Nico L.</p>
+  </div>
 
-.comments {
-  width: 350px;
-  padding: 10px;
-  border-radius: 8px;
-  background: var(--color-fondo-comment1); /* Color similar al que te gusta */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  position: relative;
-  margin: 20px auto;
-  
-}
 
-.stars {
-  color: #FFD700; /* Color dorado para estrellas */
-  font-size: 18px;
-}
+  <div class="comments">
+    <div>
+        <span class="stars">★★★★★</span>
+        <span class="comment-fecha">Hace 1 mes</span>
+    </div>
+    <p class="texto-comment">
+      Me llevé el 100% harina 000. El aroma y el sabor, de otro mundo. Riquísimo y sobre todo muy esponjoso.
+    </p>
+    <p class="text-autor">- Benja C.</p>
+  </div>
 
-.comment-fecha {
-  color: #666;
-  font-size: 14px;
-  margin-left: 5px;
-}
+  <div class="comments">
+    <div>
+        <span class="stars">★★★★★</span>
+        <span class="comment-fecha">Hace 1 semana</span>
+    </div>
+    <p class="texto-comment">
+      El integral es el mejor.
+    </p>
+    <p class="text-autor">- Ger B.</p>
+  </div>
+  <div class="comments">
+    <div>
+        <span class="stars">★★★★★</span>
+        <span class="comment-fecha">Hace 2 días</span>
+    </div>
+    <p class="texto-comment">
+      Sin lugar a dudas, más rico y más barato que los que consigo en el super.
+    </p>
+    <p class="text-autor">- Manu L.</p>
+  </div>
+  <div class="comments">
+    <div>
+        <span class="stars">★★★★★</span>
+        <span class="comment-fecha">Hace 9 días</span>
+    </div>
+    <p class="texto-comment">
+      Frescos y esponjosos, empiezo a comer y no puedo parar.
+    </p>
+    <p class="text-autor">- Mica</p>
+  </div>
+  <div class="comments">
+    <div>
+        <span class="stars">★★★★★</span>
+        <span class="comment-fecha">Hace 2 meses</span>
+    </div>
+    <p class="texto-comment">
+      Increíble que duren por lo menos 7 días adentro de la heladera.
+    </p>
+    <p class="text-autor">- Caro K.</p>
+  </div>
 
-.texto-comment {
-  margin-top: 5px;
-  font-size: 16px;
-  color: #333;
-}
+</section>
 
-.text-autor {
-  font-size: 14px;
-  color: #444;
-  text-align: right;
-  margin-top: 10px;
-  font-style: italic;
-}
+<hr>
+<!-- FOOTER -->
+  <footer>
+    <p>Seguinos en:</p>
+          <a href="https://www.instagram.com/unpan.real" target="_blank">
+            <br>
+              <img src="Imágenes/instagram_logo.png" alt="Instagram" width="50px">
+          </a>
+          
+  </footer>
 
-/* FOOTER */
-
-footer {
-  background-color: var(--color-secundario);
-  color: var(--color-texto);
-  padding: 50px 20px;
-  display: flex;
-  
-  flex-direction: column;
-  align-items: center;
-}
-
-@media (max-width: 768px) {
-  .header {
-    padding: 30px 15px; /* Reduce padding en pantallas pequeñas */
-  }
-
-  .hero-grid {
-    display: flex; /* Cambia grid por flex para mejor adaptación */
-    flex-direction: column;
-    align-items: center;
-    gap: 20px; /* Añade espacio entre elementos */
-  }
-
-  .columna_tres, .columna_uno {
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Centra el contenido */
-    align-items: center;
-    text-align: center;
-    max-width: 90%; /* Evita que ocupen todo el ancho */
-    margin: 0 auto; /* Centra en la pantalla */
-  }
-
-  .texto_col_tres, .texto_col_uno {
-    text-align: center;
-  }
-
-  .texto_col_tres p, .texto_col_uno p {
-    white-space: normal; /* Permite que el texto se acomode en varias líneas */
-  }
-
-  .botones {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    width: 100%;
-  }
-
-  .botones a {
-    width: 80%; /* Evita botones demasiado pequeños en mobile */
-    max-width: 300px;
-  }
-
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-}
-
-@media (min-width: 769px) {
-  #header-din { display: none; } /* Ocultar header dinámico en desktop */
-}
-
-@media (max-width: 768px) {
-  header:not(#header-din) { display: none; } /* Ocultar header fijo en mobile */
-}
-
-@media (max-width: 768px) { 
-  #header-din .button-comment {
-    width: 100%; /* Que ocupe todo el ancho disponible */
-    font-size: 14px; /* Texto más pequeño */
-    padding: 10px; /* Ajusta el espacio interno */
-  }
-
-.btn-encargar {
-  width: 100%; /* Que ocupe todo el ancho disponible */
-  font-size: 14px; /* Texto más pequeño */
-  padding: 10px; /* Ajusta el espacio interno */
-}
-}
+  <script src="script.js"></script>
+</body>
+</html>

@@ -284,7 +284,17 @@ hr {
   gap: 1px; /* Espacio entre los checkboxes */
 }
 
+.input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra los elementos horizontalmente */
+  margin-bottom: 15px; /* Espaciado entre cada grupo label-input */
+}
 
+.input-container label {
+  font-size: 18px;
+  text-align: center; /* Centra el texto del label */
+}
 
 .input-campo {
   background-color: var(--color-fondo9);

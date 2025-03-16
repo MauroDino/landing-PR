@@ -284,22 +284,18 @@ hr {
   gap: 1px; /* Espacio entre los checkboxes */
 }
 
-.btn-encargar {
-  margin-bottom: 10px;
-  display: flex; 
-  justify-content: center;
-  flex-direction: column; /* Para que los inputs se apilen verticalmente */
-  align-items: center; /* Asegura que los inputs estén centrados */
-  gap: 10px; /* Espaciado entre los inputs */
-  width: auto;
-}
+
+
 .input-campo {
   background-color: var(--color-fondo9);
-  color: var(--color-alternativo);
+  color: white;
   font-size: 16px;
   border: none;
   border-radius: 5px;
-  margin-top: 10px;
+  margin: 10px auto;
+  display: flex;
+  flex-direction: column; /* Pone el label arriba del input */
+  align-items: center; /* Centra todo en el eje horizontal */
 }
 
 .input-campo:hover {
@@ -312,18 +308,24 @@ hr {
   color: var(--color-texto-btn);
   text-align: center;
   opacity: 1;
-  }
+}
 
 .boton-encargar {
-  width: 20%;
-  height: 14%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;  /* Se adapta al ancho disponible */
+  max-width: 150px; /* Ajuste opcional para no ser demasiado grande */
+  padding: 10px; /* Espaciado interno en lugar de height fija */
   background-color: var(--color-texto-btn);
   color: var(--color-alternativo);
   font-size: 20px;
   border: none;
   border-radius: 5px;
-  margin-top: 10px;
+  margin: 10px auto;
   border: 1px solid #66A68D;
+  text-align: center;
+  white-space: normal; /* Permite que el texto se ajuste */
 }
 
 .boton-encargar:hover {

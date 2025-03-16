@@ -154,13 +154,18 @@
       <h2>¡Quiero el mio!</h2>
       <p>Llená los campos para encargar tu Pan Real.</p>
       <br>
-      <label>¿Cómo te llamás?</label>
-      <input class="input-campo" type="text" name="nombre" placeholder="Ej: Noa" required>
-      
-      <label for="email">Escribí tu mail, así te llega la confirmación del pedido.</label>
-      <input class="input-campo" type="email" placeholder="Ej: noaschaff5@mail.com" required>
-      <label for="email">Escribí tu número de teléfono así coordinamos la entrega</label>
-      <input class="input-campo" type="tel" placeholder="Ej: 221 444 6598" pattern="[0-9+\s-]{7,15}" required>
+      <div class="input-container">
+        <label for="name">¿Cómo te llamás?</label>
+        <input class="input-campo" type="text" name="nombre" placeholder="Ej: Noa" required>
+      </div>
+      <div class="input-container">
+        <label for="email">Escribí tu mail, así te llega la confirmación del pedido.</label>
+        <input class="input-campo" type="email" placeholder="Ej: noaschaff5@mail.com" required>
+      </div>
+      <div class="input-container">
+        <label for="tel">Escribí tu número de teléfono así coordinamos la entrega</label>
+        <input class="input-campo" type="tel" placeholder="Ej: 221 444 6598" pattern="[0-9+\s-]{7,15}" required>
+      </div>
       <section id="cantidad">
         <p class="text-cant">Seleccioná la cantidad:</p>
       <label>

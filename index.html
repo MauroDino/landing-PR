@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="styles.css">
     <title>Pan Real</title>
     <link rel="icon" href="Imágenes/Favicon.png">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap">
   
 </head>
 <body>
@@ -150,12 +150,17 @@
 <!-- TERCERA PARTE -->
 <div class="todo-formulario">
   <section class="Compras-form" id="Compras-form">
-    <form class="formulario">
+    <form class="formulario" action="https://formspree.io/f/mblglybz" method="post">
       <h2>¡Quiero el mio!</h2>
       <p>Llená los campos para encargar tu Pan Real.</p>
-      <input class="input-campo" type="text" name="nombre" placeholder="Nombre" required>
       <br>
-      <input class="input-campo" type="email" placeholder="johndoe@johndoe.com" required>
+      <label>¿Cómo te llamás?</label>
+      <input class="input-campo" type="text" name="nombre" placeholder="Ej: Noa" required>
+      
+      <label for="email">Escribí tu mail, así te llega la confirmación del pedido.</label>
+      <input class="input-campo" type="email" placeholder="Ej: noaschaff5@mail.com" required>
+      <label for="email">Escribí tu número de teléfono así coordinamos la entrega</label>
+      <input class="input-campo" type="tel" placeholder="Ej: 221 444 6598" pattern="[0-9+\s-]{7,15}" required>
       <section id="cantidad">
         <p class="text-cant">Seleccioná la cantidad:</p>
       <label>
@@ -178,7 +183,7 @@
       
       <br>
       
-      <div class="btn-encargar">
+      <div>
       <input type="submit" class="boton-encargar" value="Encargar">
       </div>
     </form>

@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     const cantidadRadios = document.querySelectorAll('input[name="cantidad"]');
     const checkboxContainer = document.getElementById('checkbox-container');
+    const formulario = document.getElementById('pedido-form');
 
     // Lista de tipos de pan. Dejar un espacio después de la primera comilla
     const tiposDePan = [" 100% 000", " Tradicional", " Blend de harinas"];
@@ -47,4 +48,19 @@ document.addEventListener('DOMContentLoaded', function () {
             checkboxContainer.appendChild(checkboxWrapper);
         }
     }
+
+    // Inicializar EmailJS
+    emailjs.init("7QK9tEgPkc8Re4aeV"); // Reemplazá TU_USER_ID con tu clave de usuario de EmailJS
+
+    // Manejar el envío del formulario
+    formulario.addEventListener("submit", function(event) {
+        event.preventDefault(); // Evita el envío tradicional del formulario
+
+        emailjs.sendForm("service_wlfrthx", "template_647wotg", this)
+            .then(function() {
+                alert("¡Formulario enviado correctamente! Revisa tu correo.");
+            }, function(error) {
+                alert("Hubo un error al enviar el formulario: " + error);
+            });
+    });
 });

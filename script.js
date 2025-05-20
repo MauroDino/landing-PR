@@ -76,14 +76,29 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         inputPanes.value = panesSeleccionados.join(', ');
         
-        // Datos para EmailJS
-        const templateParams = {
+        // SOLUCIÓN 1: Envío al cliente usando parámetro reply_to
+        const emailClienteParams = {
+            to_name: formData.get('nombre'),      // Nombre del cliente
+            reply_to: formData.get('mail'),       // Este truco puede hacer que el correo llegue al cliente
+            from_name: "Tu Panadería",            // Reemplaza con el nombre de tu negocio
             nombre: formData.get('nombre'),
             email: formData.get('mail'),
             telefono: formData.get('telefono'),
             cantidad: cantidadSeleccionada,
             panes: panesSeleccionados.join(', ')
         };
+        
+        // SOLUCIÓN 2: Crear un elemento oculto para especificar el destinatario
+        // Añadir campo oculto con el correo del cliente para EmailJS
+        //let inputDestinatario = document.getElementById('email-destinatario');
+        //if (!inputDestinatario) {
+        //    inputDestinatario = document.createElement('input');
+        //    inputDestinatario.type = 'hidden';
+        //    inputDestinatario.id = 'email-destinatario';
+        //    inputDestinatario.name = 'to_email';
+        //    formulario.appendChild(inputDestinatario);}
+        
+        inputDestinatario.value = formData.get('mail');
         
         // Enviar a Formspree
         fetch(formulario.action, {
@@ -100,8 +115,11 @@ document.addEventListener('DOMContentLoaded', function () {
             return response.json();
         })
         .then(data => {
-            // Si Formspree fue exitoso, enviar correo al cliente
-            return emailjs.send("service_wlfrthx", "template_647wotg", templateParams);
+            // SOLUCIÓN 1: Usar emailjs.send con parámetros explícitos
+            return emailjs.send("service_wlfrthx", "template_647wotg", emailClienteParams);
+            
+            // SOLUCIÓN 2: Alternativa usando sendForm (descomenta esta línea y comenta la anterior para probar)
+            // return emailjs.sendForm("service_wlfrthx", "template_647wotg", formulario);
         })
         .then(() => {
             alert('¡Pedido recibido! Revisa tu correo para la confirmación.');

@@ -5,6 +5,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const tiposDePan = [" 100% 000", " Tradicional", " Blend de harinas"];
 
+    // Inicializar EmailJS
+    emailjs.init("7QK9tEgPkc8Re4aeV");
+
     cantidadRadios.forEach(radio => {
         radio.addEventListener('change', function () {
             const cantidad = parseInt(this.value);
@@ -42,22 +45,72 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    emailjs.init("7QK9tEgPkc8Re4aeV");
-
     formulario.addEventListener("submit", function(event) {
-        // No bloqueamos el envío para que Formspree funcione
-        // Solo avisamos al usuario que el pedido fue recibido
-
-        // Dejamos pasar el envío tradicional para Formspree
-
-        // Luego enviamos el mail al cliente con EmailJS
-        setTimeout(() => {
-            emailjs.sendForm("service_wlfrthx", "template_647wotg", formulario)
-                .then(function() {
-                    alert("¡Pedido recibido! Revisa tu correo para la confirmación.");
-                }, function(error) {
-                    alert("Error al enviar mail de confirmación: " + error);
-                });
-        }, 1000); // Ajustá este delay si querés
+        event.preventDefault(); // Prevenir envío estándar
+        
+        // Recopilar datos
+        const formData = new FormData(formulario);
+        let panesSeleccionados = [];
+        
+        // Obtener los panes seleccionados
+        const checkboxes = document.querySelectorAll('input[name="pan"]:checked');
+        checkboxes.forEach(checkbox => {
+            panesSeleccionados.push(checkbox.value);
+        });
+        
+        // Verificar que la cantidad sea correcta
+        const cantidadSeleccionada = parseInt(formData.get('cantidad'));
+        if (panesSeleccionados.length !== cantidadSeleccionada) {
+            alert(`Por favor, selecciona exactamente ${cantidadSeleccionada} pan(es).`);
+            return;
+        }
+        
+        // Añadir los panes seleccionados al formulario para Formspree
+        let inputPanes = document.getElementById('panes-seleccionados');
+        if (!inputPanes) {
+            inputPanes = document.createElement('input');
+            inputPanes.type = 'hidden';
+            inputPanes.id = 'panes-seleccionados';
+            inputPanes.name = 'panes_seleccionados';
+            formulario.appendChild(inputPanes);
+        }
+        inputPanes.value = panesSeleccionados.join(', ');
+        
+        // Datos para EmailJS
+        const templateParams = {
+            nombre: formData.get('nombre'),
+            email: formData.get('mail'),
+            telefono: formData.get('telefono'),
+            cantidad: cantidadSeleccionada,
+            panes: panesSeleccionados.join(', ')
+        };
+        
+        // Enviar a Formspree
+        fetch(formulario.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Error al enviar el formulario');
+            }
+            return response.json();
+        })
+        .then(data => {
+            // Si Formspree fue exitoso, enviar correo al cliente
+            return emailjs.send("service_wlfrthx", "template_647wotg", templateParams);
+        })
+        .then(() => {
+            alert('¡Pedido recibido! Revisa tu correo para la confirmación.');
+            formulario.reset();
+            checkboxContainer.innerHTML = '';
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Ocurrió un error al procesar tu pedido. Por favor, intenta de nuevo.');
+        });
     });
 });

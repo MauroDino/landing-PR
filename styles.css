@@ -37,7 +37,6 @@ verde: A8D5BA; marrón: B7B38C; verde oscurito: 66A68D;
   padding: 0;
   box-sizing: border-box;
   font-family: Playfair Display;
-  box-sizing: border-box;
 }
 
 body {
@@ -239,7 +238,7 @@ hr {
 }
 
 .cuerpo {
-  background-color: linear-gradient(var(--color-fondo) #FFFFFF00);
+  background: linear-gradient(var(--color-fondo) #FFFFFF00);
   /*border-top: 2px solid black;
   border-bottom: 2px solid black;*/
 }
@@ -249,7 +248,7 @@ hr {
   width: auto;
   height: 40%;
   background-color: var(--color-fondo10);
-  color: var(--color-texto-in);
+  color: var(--color-texto-ing);
   border-radius: 10px;
   justify-content: space-between; /* Distribuye los elementos equitativamente */
 }
@@ -318,7 +317,7 @@ hr {
 .input-campo:hover {
   box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2); /* Aumenta la sombra al pasar el ratón */
   transform: scale(1.05); /* Aumenta ligeramente el tamaño */
-  background-color: var(--color-text-btn2)
+  background-color: var(--color-text-btn2);
   }
 
 ::placeholder {
@@ -505,5 +504,15 @@ footer {
   width: 100%; /* Que ocupe todo el ancho disponible */
   font-size: 14px; /* Texto más pequeño */
   padding: 10px; /* Ajusta el espacio interno */
+}
+
+.texto_col_uno p.activo,
+.texto_col_tres p.activo {
+  background-color: var(--color-secundario); /* O un color que se note */
+  color: white;
+  font-weight: bold;
+  border-radius: 10px;
+  padding: 5px 10px;
+  transition: all 0.3s ease;
 }
 }
